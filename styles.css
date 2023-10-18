@@ -1,0 +1,51 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size)*.9)
+}
+
+body {
+    margin:0px;
+    background-color: aliceblue;
+}
+
+.board {
+    width: 100vw;
+    height: 100vh;    
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(42, 51, 71);
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cell.x::before, 
+.cell.x::after {
+    position: absolute;
+    content: "";
+    width: calc(var(--mark-size) *.15 );
+    height: var(--mark-size);
+    background-color: rgb(99, 49, 147);
+}
+
+.cell.x::before{
+    transform: rotate(45deg);
+}
+
+.cell.x::after{
+    transform: rotate(-45deg);
+}
