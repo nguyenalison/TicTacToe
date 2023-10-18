@@ -37,7 +37,7 @@ body {
 .cell.x::after {
     position: absolute;
     content: "";
-    width: calc(var(--mark-size) *.15 );
+    width: calc(var(--mark-size) *.35 );
     height: var(--mark-size);
     background-color: rgb(99, 49, 147);
 }
@@ -48,4 +48,26 @@ body {
 
 .cell.x::after{
     transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after {
+    content: '';
+    position: absolute;
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: rgb(99, 49, 147);
+    border-radius: 100%;
+}
+
+.cell.circle::before{
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color:  rgb(99, 49, 147);
+}
+
+.cell.circle::after{
+    width: calc(var(--mark-size)*.3 );
+    height: calc(var(--mark-size) *.3);
+    background-color:  rgb(42, 51, 71);
 }
